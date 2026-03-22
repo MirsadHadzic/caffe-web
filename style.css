@@ -28,11 +28,18 @@ body, html {
 }
 
 /* Logo Fade-in Animation */
+/* Logo Fade-in Animation & MAGIC BLEND MODE FIX */
 .logo {
-    width: 250px; /* Adjust size as needed */
+    width: 250px;
     max-width: 80%;
-    border-radius: 10px;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+    
+    /* This forces the dark grey in your image to become PURE black */
+    filter: grayscale(100%) contrast(1000%); 
+    
+    /* This makes that pure black completely invisible */
+    mix-blend-mode: screen; 
+    
+    /* Keep your animations */
     opacity: 0;
     animation: fadeIn 1.5s ease-out forwards;
 }
